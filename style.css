@@ -25,12 +25,10 @@ body {
 .app-container {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important; /* Forces everything onto one line */
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow: hidden; /* Stops the whole page from bouncing */
 }
-
 /* Server Sidebar */
 .server-sidebar {
     width: 72px;
@@ -119,10 +117,10 @@ body {
 }
 
 .user-avatar, .message-avatar, .member-avatar {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 16px;
 }
 
 .user-info {
@@ -138,11 +136,11 @@ body {
 
 /* Chat Area */
 .chat-area {
-    flex: 1 !important; /* Grows to fill available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-primary);
-    min-width: 0 !important; /* Allows it to shrink so sidebar fits */
+    background-color: #313338; /* Official Discord dark theme grey */
+    min-width: 0; /* Prevents long messages from breaking the layout */
 }
 .chat-header {
     height: var(--header-height);
@@ -167,7 +165,7 @@ body {
 .message {
     display: flex;
     padding: 2px 16px;
-    margin-bottom: 15px;
+    margin-top: 1.0625rem; /* Standard Discord spacing */
 }
 
 .author {
@@ -197,12 +195,10 @@ body {
 
 /* Member Sidebar */
 .member-sidebar {
-    width: 240px !important;
-    background-color: var(--bg-secondary);
-    flex-shrink: 0 !important; /* Prevents it from disappearing/dropping */
-    display: flex;
-    flex-direction: column;
-    padding: 24px 8px;
+    width: 240px;
+    background-color: #2b2d31;
+    flex-shrink: 0; 
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .member-group {
@@ -249,7 +245,7 @@ body {
 }
 
 .message:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.02); /* Very subtle highlight */
 }
 
 /* This targets the container for your logo */
@@ -299,4 +295,19 @@ body {
     color: #f8d8b0; /* Your gold hex code */
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.input-area {
+    padding: 0 16px 24px 16px; /* Creates that "floating" look */
+}
+
+.input-area input {
+    width: 100%;
+    background-color: #383a40; /* Darker input box like the screenshot */
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    color: #dbdee1;
+    font-size: 1rem;
+    outline: none;
 }
